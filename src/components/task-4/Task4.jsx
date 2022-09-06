@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import styles from "./styles.module.css";
+import React from "react";
+import Accordion from "./Accordion";
 
 const Task4 = () => {
   const data = [
@@ -25,37 +25,15 @@ const Task4 = () => {
     },
   ];
 
-  const activeAccordion = [
-    { id: 1, isActive: false },
-    { id: 2, isActive: false },
-    { id: 3, isActive: false },
-    { id: 4, isActive: false },
-  ];
-
-  const openAccordion = (index) =>
-    (activeAccordion[index].isActive = !activeAccordion[index].isActive);
-
   return (
     <div>
       <h1>Accordion</h1>
       {data.map((element, index) => (
-        <div
+        <Accordion
+          title={element.title}
+          content={element.content}
           key={index}
-          className={`${styles.container}`}
-          onClick={() => openAccordion(index)}
-        >
-          <div className={`${styles.title_div}`}>
-            <span>{element.title}</span>
-            <span>{activeAccordion[index].isActive ? "-" : "+"}</span>
-          </div>
-          <div
-            className={`${styles.content_div} ${
-              activeAccordion[index].isActive ? styles.active : ""
-            }`}
-          >
-            {element.content}
-          </div>
-        </div>
+        />
       ))}
     </div>
   );
