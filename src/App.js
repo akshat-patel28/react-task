@@ -8,6 +8,7 @@ import Task4 from "./components/task-4/Task4";
 import Task5 from "./components/task-5/Task5";
 import Task6 from "./components/task-6/Task6";
 import Task7 from "./components/task-7/Task7";
+import Task8 from "./components/task-8/Task8";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="task5" element={<Task5 />} />
           <Route path="task6" element={<Task6 />} />
           <Route path="task7" element={<Task7 />} />
+          <Route path="task8" element={<Task8 />} />
         </Route>
       </Routes>
     </div>
